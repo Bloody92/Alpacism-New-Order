@@ -18,7 +18,7 @@ public class CameraBehaviour : MonoBehaviour {
 		if ((player.GetFace () && dx > 0) || (!player.GetFace () && dx < 0)) dx *= -1;
 
 		Vector3 targetPosition = target.TransformPoint (new Vector3 (dx, dy, -10));
-		transform.position = Vector3.SmoothDamp (transform.position, targetPosition, ref velocity, damping);
+		transform.position = Vector3.SmoothDamp (new Vector3(transform.position.x, transform.position.y, -10), targetPosition, ref velocity, damping);
 	
 
 	}
